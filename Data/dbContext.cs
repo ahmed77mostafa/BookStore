@@ -31,5 +31,6 @@ namespace wTickets.Data
         public DbSet<Cinema> Cinema { get; set; }
         public DbSet<Movie> Movie { get; set; }
         public DbSet<Producer> Producer { get; set; }
+        public DbSet<Actor_Movie> Actor_Movie { get; set; }
     }
 }

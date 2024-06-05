@@ -7,6 +7,7 @@
         Comedy,
         Documentary,
         ScienceFiction,
-        Cartoon
+        Cartoon,
+        Action
     }
 }

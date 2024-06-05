@@ -10,7 +10,9 @@ Console.WriteLine($"Ahmed Connection String: {builder.Configuration.GetConnectio
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<dbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MyConnection")));
+    options
+    .UseSqlServer(builder.Configuration.GetConnectionString("MyConnection")));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -31,5 +33,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+AppDbInitializer.Seed(app);
 
 app.Run();
